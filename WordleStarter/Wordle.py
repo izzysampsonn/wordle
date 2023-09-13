@@ -9,6 +9,7 @@ def wordle():
 
     def enter_action(s):
         guessed_word = s.strip().lower()
+
         if guessed_word == random_word:
             gw.show_message("Hooray! You win.")
         else:
@@ -25,3 +26,12 @@ def wordle():
 
 if __name__ == "__main__":
     wordle()
+
+
+    # Initialize total attempts variable IS
+    total_attempts = 0
+
+    # Allow player to enter 5 letter words IS
+    while total_attempts <= 6:
+        player_guess = input("Enter a 5  letter word: ")
+        

@@ -1,3 +1,4 @@
+
 # File: WordleGraphics.py
 
 """
@@ -12,8 +13,8 @@ import tkinter
 
 # Constants
 
-N_ROWS = 6			# Number of rows
-N_COLS = 5			# Number of columns
+N_ROWS = 6 # Number of rows
+N_COLS = 5 # Number of columns
 
 CORRECT_COLOR = "#66BB66"       # Light green for correct letters
 PRESENT_COLOR = "#CCBB66"       # Brownish yellow for misplaced letters
@@ -21,13 +22,13 @@ MISSING_COLOR = "#999999"       # Gray for letters that don't appear
 UNKNOWN_COLOR = "#FFFFFF"       # Undetermined letters are white
 KEY_COLOR = "#DDDDDD"           # Keys are colored light gray
 
-CANVAS_WIDTH = 500		# Width of the tkinter canvas (pixels)
-CANVAS_HEIGHT = 700		# Height of the tkinter canvas (pixels)
+CANVAS_WIDTH = 500 # Width of the tkinter canvas (pixels)
+CANVAS_HEIGHT = 700 # Height of the tkinter canvas (pixels)
 
-SQUARE_SIZE = 60		# Size of each square (pixels)
+SQUARE_SIZE = 60 # Size of each square (pixels)
 SQUARE_SEP = 5                  # Separation between squares (pixels)
-TOP_MARGIN = 30    		# Top margin (pixels)
-BOTTOM_MARGIN = 30    		# Bottom margin (pixels)
+TOP_MARGIN = 30     # Top margin (pixels)
+BOTTOM_MARGIN = 30     # Bottom margin (pixels)
 MESSAGE_SEP = 20                # Space between board and message center
 
 SQUARE_FONT = ("Helvetica Neue", -44, "bold")
@@ -113,6 +114,8 @@ class WordleGWindow:
                     s += self._grid[self._row][col].get_letter();
                 for fn in self._enter_listeners:
                     fn(s)
+                self._row +=1
+                self._col = 0
             elif ch.isalpha():
                 self.show_message("")
                 if self._row < N_ROWS and self._col < N_COLS:

@@ -22,8 +22,13 @@ def wordle():
         
         if guessed_word in FIVE_LETTER_WORDS: # See if it's a real word (IS)
             if guessed_word == random_word:
-                    gw.show_message("Hooray! You win.")
-                    return
+                row = gw.get_current_row()
+                for col in range(N_COLS):
+                    gw.set_square_color(row, col, CORRECT_COLOR)
+                gw.show_message("Hooray! You win.")
+                return
+            
+
             else:
                     # Addings stuff
                 correct_positions=[]
@@ -41,15 +46,16 @@ def wordle():
                          present_columns.append(guessed_word.index(guessed_word[i]))
 
                 # Color the boxes accordingly
-                for row in range(N_ROWS):
-                     for col in range(N_COLS):
-                          letter = random_word[col]
-                          if col in correct_positions:
-                               gw.set_square_color(row, col, CORRECT_COLOR)
-                          elif col in present_columns:
-                               gw.set_square_color(row, col, PRESENT_COLOR)
-                          else:
-                               gw.set_square_color(row, col, MISSING_COLOR)
+                row = gw.get_current_row()
+
+                for col in range(N_COLS):
+                    letter = random_word[col]
+                    if col in correct_positions:
+                        gw.set_square_color(row, col, CORRECT_COLOR)
+                    elif col in present_columns:
+                        gw.set_square_color(row, col, PRESENT_COLOR)
+                    else:
+                        gw.set_square_color(row, col, MISSING_COLOR)
                 
                 # Move on to the next row
                 gw.set_current_row(gw.get_current_row() + 1)

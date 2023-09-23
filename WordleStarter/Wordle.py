@@ -12,6 +12,7 @@ def wordle():
     # Randomly select a word from FIVE_LETTER_WORDS
     random_word = random.choice(FIVE_LETTER_WORDS)
     print(random_word)
+    color_scheme = input("Do you want pink or normal? Enter 'pink' or 'normal'.")
     
     guess_count = 0
 
@@ -30,10 +31,15 @@ def wordle():
         if guessed_word in FIVE_LETTER_WORDS: # See if it's a real word (IS)
             if guessed_word == random_word:
                 row = gw.get_current_row()
-                for col in range(N_COLS):
-                    gw.set_square_color(row, col, CORRECT_COLOR)
-                gw.show_message("Hooray! You win.")
-                gw.show_message(f"Number of guesses: {guess_count}")
+                if color_scheme == "pink":
+                    pink_color = "#FFC0CB"
+                    for col in range(N_COLS):
+                        gw.set_square_color(row, col, pink_color)
+                    gw.show_message("Hooray! You win.")
+                else:
+                    for col in range(N_COLS):
+                        gw.set_square_color(row, col, CORRECT_COLOR)
+                        gw.show_message("Hooray! You win.")
                 return
             
 
@@ -56,14 +62,28 @@ def wordle():
                 # Color the boxes accordingly
                 row = gw.get_current_row()
 
-                for col in range(N_COLS):
-                    letter = random_word[col]
-                    if col in correct_positions:
-                        gw.set_square_color(row, col, CORRECT_COLOR)
-                    elif col in present_columns:
-                        gw.set_square_color(row, col, PRESENT_COLOR)
-                    else:
-                        gw.set_square_color(row, col, MISSING_COLOR)
+                if color_scheme == "pink":
+                    for col in range(N_COLS):
+                        pink_color = "#FFC0CB"
+                        orange_color = "#FFA500"
+                        letter = random_word[col]
+                        if col in correct_positions:
+                            gw.set_square_color(row, col, pink_color)
+                        elif col in present_columns:
+                            gw.set_square_color(row, col, orange_color)
+                        else:
+                            gw.set_square_color(row, col, MISSING_COLOR)
+                else:
+                    for col in range(N_COLS):
+                        letter = random_word[col]
+                        if col in correct_positions:
+                            gw.set_square_color(row, col, CORRECT_COLOR)
+                        elif col in present_columns:
+                            gw.set_square_color(row, col, PRESENT_COLOR)
+                        else:
+                            gw.set_square_color(row, col, MISSING_COLOR)
+               
+
                 
                 # Move on to the next row
                 gw.set_current_row(gw.get_current_row() + 1)

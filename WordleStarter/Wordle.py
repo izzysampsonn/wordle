@@ -5,19 +5,26 @@ import random
 from WordleDictionary import FIVE_LETTER_WORDS
 from WordleGraphics import WordleGWindow, N_COLS, N_ROWS, CORRECT_COLOR, PRESENT_COLOR, MISSING_COLOR
 
+
 def wordle():
     gw = WordleGWindow()
 
     # Randomly select a word from FIVE_LETTER_WORDS
     random_word = random.choice(FIVE_LETTER_WORDS)
     print(random_word)
+    
+    guess_count = 0
 
     def enter_action(s):
+        nonlocal guess_count
         guessed_word = s.strip().lower()
+
+        guess_count += 1 
 
         # Check if it has 5 letters (IS)
         if len(guessed_word) != 5:
               gw.show_message("Invalid input: Must be 5 letters.")
+              guess_count -= 1
               return
         
         if guessed_word in FIVE_LETTER_WORDS: # See if it's a real word (IS)
@@ -26,6 +33,7 @@ def wordle():
                 for col in range(N_COLS):
                     gw.set_square_color(row, col, CORRECT_COLOR)
                 gw.show_message("Hooray! You win.")
+                gw.show_message(f"Number of guesses: {guess_count}")
                 return
             
 
@@ -59,10 +67,13 @@ def wordle():
                 
                 # Move on to the next row
                 gw.set_current_row(gw.get_current_row() + 1)
-
+            
                 gw.show_message("Nope. Try again.")
+                gw.show_message(f"Number of guesses: {guess_count}") 
+                
         else:
              gw.show_message("Invalid input: Word not in dictionary.")
+             guess_count -= 1
 
     gw.add_enter_listener(enter_action)
 

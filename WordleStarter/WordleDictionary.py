@@ -833,3 +833,37 @@ FIVE_LETTER_WORDS = [
     "zones", "zonks", "zooey", "zooid", "zooks", "zooms", "zoons",
     "zoril", "zowie", "zymes"
 ]
+
+FIVE_LETTER_WORDS_SPANISH = [
+    "aleta", "arnes", "astro", "atajo", "audio", "avena", "axila", "bingo",
+    "boxer", "bucal", "burro", "busto", "cafes", "cajas", "caliz", "callo",
+    "canas", "canes", "comic", "danos", "datos", "dedos", "donas", "donas",
+    "dones", "drama", "dubai", "ellas", "encia", "enojo", "envio", "error",
+    "esqui", "euros", "femur", "forma", "fosil", "fotos", "freno", "fresa",
+    "gafas", "gales", "gases", "gatos", "genes", "ghana", "goles", "gorra",
+    "gruas", "grumo", "haiti", "hotel", "huevo", "hurto", "ideas", "iglus",
+    "ingle", "islas", "japon", "jarra", "jefes", "jerga", "jugos", "julio",
+    "lagos", "lazos", "leyes", "loros", "lunar", "magos", "manos", "mapas",
+    "mares", "media", "memes", "menta", "menus", "mesas", "metas", "miles",
+    "modas", "monos", "moscu", "movil", "multa", "naves", "nepal", "ninos",
+    "notas", "nubes", "nudos", "obras", "ojera", "ollas", "ondas", "onzas",
+    "opera", "osito", "ovulo", "oxido", "panal", "panes", "paris", "pasas",
+    "paseo", "patos", "pausa", "pauta", "pavos", "pecas", "peces", "regla",
+    "reino", "reyes", "rimel", "riocas", "ritos", "rulos", "rusia", "santa",
+    "sapos", "vacas", "valle", "vasos", "viaje", "armar", "aullo", "ayuda", 
+    "ayuna", "burla", "calmo", "cansa", "canta", "canto", "dance", "deben", 
+    "debes", "dejas", "dices", "diles", "donan", "espia", "estar", "evade", 
+    "evoca", "exige", "fumar", "gasto", "grabe", "grito", "habia", "habla", 
+    "habra", "hacen", "haces", "halla", "irias", "jugar", "ladro", "licua", 
+    "logro", "manda", "marco", "miras", "morir", "nadar", "odias", "oírte", 
+    "pagar", "pasa", "quede", "quemo", "rezan", "rimar", "robar", "rodar",
+    "sabia", "salir", "salta", "sanar", "seras", "tengo", "tenia", "tiene", 
+    "vengo", "vimos", "volar", "votar", "yendo", "abajo", "acaso", "ahora", 
+    "antes", "atras", "bueno", "cerca", "detras", "donde", "entre", "fuera",
+    "jamas", "justo", "lejos", "luego", "mitad", "mucho", "nunca", "quien", 
+    "quiza", "sobre", "debil", "densa", "dulce", "duros", "ebrio", "flaca", 
+    "frias", "frita", "gorda", "grave", "guapo", "iluso", "india", "indio", 
+    "irani", "islam", "larga", "lenta", "libre", "linda", "locas", "locos", 
+    "malas", "males", "malos", "patan", "rojas", "rotas", "rusas", "tenso", 
+    "terca", "tonta", "torpe", "usado", "verde", "zurda"
+]

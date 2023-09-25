@@ -21,6 +21,7 @@ def wordle():
 
     # Randomly select a word from the chosen list
     random_word = random.choice(word_list)
+    print(random_word)
     
     # Allow the user to choose a color scheme
     color_scheme = input("Do you want pink or normal? Enter 'pink' or 'normal': ")
@@ -79,19 +80,30 @@ def wordle():
                         letter = random_word[col]
                         if col in correct_positions:
                             gw.set_square_color(row, col, pink_color)
+                            gw.set_key_color(gw.get_square_letter(row, col), pink_color)
                         elif col in present_columns:
                             gw.set_square_color(row, col, orange_color)
+                            gw.set_key_color(gw.get_square_letter(row, col), orange_color)
+
                         else:
                             gw.set_square_color(row, col, MISSING_COLOR)
+                            gw.set_key_color(gw.get_square_letter(row, col), MISSING_COLOR)
+
                 else:
                     for col in range(N_COLS):
                         letter = random_word[col]
                         if col in correct_positions:
                             gw.set_square_color(row, col, CORRECT_COLOR)
+                            gw.set_key_color(gw.get_square_letter(row, col), CORRECT_COLOR)
+
                         elif col in present_columns:
                             gw.set_square_color(row, col, PRESENT_COLOR)
+                            gw.set_key_color(gw.get_square_letter(row, col), PRESENT_COLOR)
+
                         else:
                             gw.set_square_color(row, col, MISSING_COLOR)
+                            gw.set_key_color(gw.get_square_letter(row, col), MISSING_COLOR)
+
 
                 # Check if the player has run out of guesses
                 if guess_count == 0:
